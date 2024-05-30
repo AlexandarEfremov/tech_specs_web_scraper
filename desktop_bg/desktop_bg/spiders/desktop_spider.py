@@ -3,6 +3,8 @@ import re
 import scrapy
 from scrapy.http import Response
 
+from desktop_bg.desktop_bg.items import DesktopBgItem
+
 
 class DesktopSpiderSpider(scrapy.Spider):
     name = "desktop_spider"
@@ -10,6 +12,8 @@ class DesktopSpiderSpider(scrapy.Spider):
     start_urls = ["https://desktop.bg/computers-all"]
 
     def parse(self, response: Response, **kwargs: Any) -> Any:
+        item = DesktopBgItem()
+
         all_articles = response.css('li[id^="product"]')
         for pc in all_articles:
             list_of_specs = pc.css('ul li::text').getall()
@@ -19,12 +23,12 @@ class DesktopSpiderSpider(scrapy.Spider):
             if match:
                 ram = match.group(1)
 
-            yield {
-                "processor": processor,
-                "gpu": gpu,
-                "motherboard": motherboard,
-                "ram": ram
-            }
+            item["processor"] = processor
+            item["gpu"] = gpu
+            item["motherboard"] = motherboard
+            item["ram"] = ram
+
+            yield item
 
         next_page = response.css('li.next-page a::attr(href)').get()
 
