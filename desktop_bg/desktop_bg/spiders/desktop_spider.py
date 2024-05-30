@@ -3,7 +3,7 @@ import re
 import scrapy
 from scrapy.http import Response
 
-from desktop_bg.desktop_bg.items import DesktopBgItem
+from ..items import DesktopBgItem
 
 
 class DesktopSpiderSpider(scrapy.Spider):
