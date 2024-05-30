@@ -20,7 +20,6 @@ class DesktopSpiderSpider(scrapy.Spider):
                 ram = match.group(1)
 
             yield {
-                "name": pc.css('h2::text').get(),
                 "processor": processor,
                 "gpu": gpu,
                 "motherboard": motherboard,
