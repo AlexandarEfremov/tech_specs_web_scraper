@@ -1,4 +1,4 @@
-This script returns the processor, gpu and motherboard technical specifications of all machines on https://desktop.bg/computers-all
+This script returns the processor, gpu, motherboard and ram technical specifications of all machines on https://desktop.bg/computers-all
 
 ![image](https://github.com/AlexandarEfremov/tech_specs_web_scraper/assets/145782693/4c71d829-35a3-4c04-b5e1-a2ce1cba5479)
 
