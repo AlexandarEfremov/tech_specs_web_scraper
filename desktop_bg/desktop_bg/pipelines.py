@@ -7,7 +7,7 @@
 # useful for handling different item types with a single interface
 from itemadapter import ItemAdapter
 import sqlite3
-
+from .json_schema import validate_computer
 
 class DesktopBgPipeline:
     def __init__(self):
@@ -40,6 +40,10 @@ class DesktopBgPipeline:
         return item
 
     def store_db(self, item):
+        is_valid, validation_error = validate_computer(dict(item))
+        if not is_valid:
+            raise ValueError(f"Item validation failed: {validation_error}")
+
         self.curr.execute("""INSERT OR IGNORE INTO specs_tb (processor, gpu, motherboard, ram)
                                    VALUES (?,?,?,?)""", (
 
