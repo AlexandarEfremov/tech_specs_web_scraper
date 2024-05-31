@@ -25,7 +25,9 @@ class DesktopBgPipeline:
                         processor TEXT,
                         gpu TEXT,
                         motherboard TEXT,
-                        ram TEXT
+                        ram TEXT,
+                        UNIQUE(processor, gpu, motherboard, ram)
+
                     )
                 ''')
 
@@ -34,7 +36,7 @@ class DesktopBgPipeline:
         return item
 
     def store_db(self, item):
-        self.curr.execute("""INSERT INTO specs_tb (processor, gpu, motherboard, ram)
+        self.curr.execute("""INSERT OR IGNORE INTO specs_tb (processor, gpu, motherboard, ram)
                                    VALUES (?,?,?,?)""", (
 
                                 item['processor'],
