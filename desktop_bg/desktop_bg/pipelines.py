@@ -19,23 +19,27 @@ class DesktopBgPipeline:
         self.curr = self.conn.cursor()
 
     def create_table(self):
-        self.curr.execute("""CREATE TABLE specs_tb(
-                            processor text,
-                            gpu text,
-                            motherboard text,
-                            ram text
-        )""")
+        self.curr.execute('''
+                    CREATE TABLE IF NOT EXISTS specs_tb (
+                        id INTEGER PRIMARY KEY AUTOINCREMENT,
+                        processor TEXT,
+                        gpu TEXT,
+                        motherboard TEXT,
+                        ram TEXT
+                    )
+                ''')
 
     def process_item(self, item, spider):
         self.store_db(item)
         return item
 
     def store_db(self, item):
-        self.curr.execute("""INSERT INTO specs_tb
-                             VALUES (?,?,?,?)"""(
-                                item['processor'][0],
-                                item['gpu'][0],
-                                item['motherboard'][0],
-                                item['ram'][0],
+        self.curr.execute("""INSERT INTO specs_tb (processor, gpu, motherboard, ram)
+                                   VALUES (?,?,?,?)""", (
+
+                                item['processor'],
+                                item['gpu'],
+                                item['motherboard'],
+                                item['ram'],
         ))
         self.conn.commit()
