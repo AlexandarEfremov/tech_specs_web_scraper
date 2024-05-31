@@ -30,6 +30,10 @@ class DesktopBgPipeline:
 
                     )
                 ''')
+        self.conn.commit()
+
+    def close_spider(self):
+        self.conn.close()
 
     def process_item(self, item, spider):
         self.store_db(item)
