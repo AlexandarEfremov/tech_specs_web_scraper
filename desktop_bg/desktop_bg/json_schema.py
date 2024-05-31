@@ -9,7 +9,7 @@ computer_schema = {
         "motherboard": {"type": "string"},
         "ram": {"type": "string"},
     },
-    "required": {"processor", "gpu", "motherboard", "ram"}
+    "required": ["processor", "gpu", "motherboard", "ram"]
 }
 
 
