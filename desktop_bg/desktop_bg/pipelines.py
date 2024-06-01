@@ -8,6 +8,8 @@
 from itemadapter import ItemAdapter
 import sqlite3
 from .json_schema import validate_computer
+from jsonschema.exceptions import ValidationError
+
 
 class DesktopBgPipeline:
     def __init__(self):
