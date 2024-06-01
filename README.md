@@ -18,26 +18,26 @@ Tech Specs Scraper is a web scraper built using Scrapy and a REST API developed 
 
 1. Clone the repository:
 
-   git clone https://github.com/AlexandarEfremov/tech_specs_web_scraper.git
-   cd desktop_bg
+   - git clone https://github.com/AlexandarEfremov/tech_specs_web_scraper.git
+   - cd desktop_bg
 
 2. Create a virtual environment and activate it:
    
-   python -m venv venv
-   source venv/bin/activate
+   - python -m venv venv
+   - source venv/bin/activate
 
 4. Install the required dependencies:
    
-   pip install scrapy
-   pip install jsonschema
-   pip install flask
+   - pip install scrapy
+   - pip install jsonschema
+   - pip install flask
 
 ## Running the scraper
 
 1. Navigate to the desktop_bg directory:
 
-   cd desktop_bg
-   cd spiders
+   - cd desktop_bg
+   - cd spiders
 
 2. Run the scraper:
    
@@ -60,15 +60,15 @@ Tech Specs Scraper is a web scraper built using Scrapy and a REST API developed 
 
 Get All Computers
 
-  URL: /computers
-  Method: GET
+  - URL: /computers
+  - Method: GET
 
 Query Parameters:
 
-  processor (optional),
-  gpu (optional),
-  motherboard (optional),
-  ram (optional)
+  - processor (optional),
+  - gpu (optional),
+  - motherboard (optional),
+  - ram (optional)
 
 Response:
 
@@ -76,9 +76,9 @@ Response:
 
 ## Example requests
 
-  Get all computers: http://127.0.0.1:5000/computers /n
-  Filter by processor: http://127.0.0.1:5000/computers?processor=Intel /n
-  Filter by GPU: http://127.0.0.1:5000/computers?gpu=NVIDIA /n
+  - Get all computers: http://127.0.0.1:5000/computers /n
+  - Filter by processor: http://127.0.0.1:5000/computers?processor=Intel /n
+  - Filter by GPU: http://127.0.0.1:5000/computers?gpu=NVIDIA /n
 
 
 
@@ -92,7 +92,7 @@ This project is licensed under the MIT License.
 
 ## Acknowledgments
 
-  https://scrapy.org/
-  Flask
-  SQLite3
+  - https://scrapy.org/
+  - Flask
+  - SQLite3
 
