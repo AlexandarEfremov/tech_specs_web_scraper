@@ -41,17 +41,17 @@ Tech Specs Scraper is a web scraper built using Scrapy and a REST API developed 
 
 2. Run the scraper:
    
-   scrapy crawl desktop_spider
+   - scrapy crawl desktop_spider
 
 ## Running the Flask API
 
 1. Navigate to the api directory:
    
-   cd api
+   - cd api
 
 2. Start the Flask server:
 
-   python main.py
+   - python main.py
 
 3. The API will be available at http://127.0.0.1:5000.
 
@@ -76,13 +76,14 @@ Response:
 
 ## Example requests
 
-  - Get all computers: http://127.0.0.1:5000/computers /n
-  - Filter by processor: http://127.0.0.1:5000/computers?processor=Intel /n
-  - Filter by GPU: http://127.0.0.1:5000/computers?gpu=NVIDIA /n
+  - Get all computers: http://127.0.0.1:5000/computers
+  - Filter by processor: http://127.0.0.1:5000/computers?processor=Intel
+  - Filter by GPU: http://127.0.0.1:5000/computers?gpu=NVIDIA
 
 
 
-Crawling permissions as per https://desktop.bg/robots.txt
+## Crawling permissions
+   - https://desktop.bg/robots.txt
 
 ![image](https://github.com/AlexandarEfremov/tech_specs_web_scraper/assets/145782693/b46d345e-3b53-4f12-aa6f-8f012910a015)
 
