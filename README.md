@@ -76,11 +76,11 @@ Response:
 
 ## Example requests
 
-  Get all computers: http://127.0.0.1:5000/computers
-  Filter by processor: http://127.0.0.1:5000/computers?processor=Intel
-  Filter by GPU: http://127.0.0.1:5000/computers?gpu=NVIDIA
+  Get all computers: http://127.0.0.1:5000/computers /n
+  Filter by processor: http://127.0.0.1:5000/computers?processor=Intel /n
+  Filter by GPU: http://127.0.0.1:5000/computers?gpu=NVIDIA /n
 
-![image](https://github.com/AlexandarEfremov/tech_specs_web_scraper/assets/145782693/4c71d829-35a3-4c04-b5e1-a2ce1cba5479)
+
 
 Crawling permissions as per https://desktop.bg/robots.txt
 
